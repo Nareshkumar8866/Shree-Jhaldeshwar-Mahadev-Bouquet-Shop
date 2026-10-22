@@ -1,0 +1,6 @@
+PUT YOUR PHOTOS HERE
+  images/bouquet.jpg      -> main bouquet photo (hero + scroll animation). Portrait 4:5 works best.
+  images/shop.jpg         -> your real shop photo (Contact section). Landscape works best.
+  images/products/*.jpg   -> optional photo per product (names are in js/config.js).
+                             Missing product photos automatically fall back to bouquet.jpg.
+Tip: resize to ~1200px wide and save as JPG/WebP (under ~250 KB each) for fast loading.
