@@ -14,10 +14,6 @@
   <meta property="og:site_name" content="Naresh Bouquet">
   <meta property="og:locale" content="en_IN">
   <meta property="og:title" content="Chocolate Bouquets &amp; Gifts | Naresh Bouquet">
-  <meta property="og:image" content="images/bouquet.jpg">
-  <meta property="og:image:alt" content="Handcrafted chocolate bouquet by Naresh Bouquet">
-  <meta name="twitter:image" content="images/bouquet.jpg">
-  <meta name="twitter:image:alt" content="Handcrafted chocolate bouquet by Naresh Bouquet">
   <meta property="og:description" content="Make every moment sweeter. Handcrafted chocolate bouquets, thoughtfully wrapped with love. Order on WhatsApp.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Chocolate Bouquets &amp; Gifts | Naresh Bouquet">
@@ -1086,29 +1082,8 @@ window.SHOP = {
   }
 
   /* ---------- boot ---------- */
-  function configureSeo() {
-    var base = String(S.siteUrl || "").replace(/\\/+$/, "");
-    var setMeta = function (selector, value, attr) {
-      var el = document.querySelector(selector);
-      if (el && value) el.setAttribute(attr || "content", value);
-    };
-    if (!base) return; // Set SHOP.siteUrl after the real domain is live.
-    var canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = base + "/";
-    setMeta('meta[property="og:url"]', base);
-    var shareImage = base + "/images/bouquet.jpg";
-    setMeta('meta[property="og:image"]', shareImage);
-    setMeta('meta[name="twitter:image"]', shareImage);
-  }
-
   function boot() {
     document.title = "Chocolate Bouquets & Gifts" + (S.city ? " in " + S.city : "") + " | " + S.name;
-    configureSeo();
     renderProducts(); renderOccasions(); renderSteps(); renderReviews(); renderFaq(); renderContact(); renderSocial();
     if (S.city) { var md = document.querySelector('meta[name="description"]'); if (md) md.content = "Handcrafted chocolate bouquets in " + S.city + " for birthdays, anniversaries and Valentine's Day. Dairy Milk, KitKat and mixed bouquets, customised your way. Order on WhatsApp."; }
     injectSchema(); initForm(); initNav();
